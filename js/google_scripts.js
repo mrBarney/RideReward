@@ -28,9 +28,10 @@ else {
 cityCircle = new google.maps.Marker({
           position: center,
           icon: {
-            path: google.maps.SymbolPath.CIRCLE,
+            url: "sprites/dick.gif",
             scale: 7
           },
+          draggable: true,
           map: map
         });
       }
