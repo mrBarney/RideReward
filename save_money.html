@@ -4,14 +4,15 @@
     <meta charset="utf-8">
     <title>Save Money</title>
     <meta name="viewport" content="width = device-width, initial-scale = 1.0">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="js/scripts.js"></script>
+		<script src="js/sponsor.js"></script>
 </head>
 
 <body>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="scripts.js"></script>
+
     <div class="bar">
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -46,8 +47,11 @@
           <option>Store 4</option>
         </select>
         </div>
-        <button id="locBut" onClick=sendLocation()>Send my location</button>
+        <input type="button" href="#" id="startClock" value = "Click here for your coupon code">
+        <span id="count"></span>
     </div>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
 </body>
 
