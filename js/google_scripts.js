@@ -1,6 +1,6 @@
 var loc = {latitude: 0, longitude: 0};
 var center = {lat: loc.latitude, lng: loc.longitude};
-var cityCircle;
+var clientMarker;
 var map;
 var loopUpdate;
 
@@ -11,21 +11,14 @@ function getLongitude() {
   return loc.longitude;
 }
 
+
 function initMap() {
     if (navigator && navigator.geolocation) {
         console.log('Geolocation is supported');
         return navigator.geolocation.getCurrentPosition(locationFound, failure);
     } else {
         console.log('Geolocation is not supported');
-    }
-
-}
-
-function updateLocation() {
-    if (navigator && navigator.geolocation) {
-        return navigator.geolocation.getCurrentPosition(success, ()=>console.log('location not updated'));
-    } else {
-        console.log('location update failed');
+        document.getElementById('map').innerHTML = "Location Services are not supported on this device";
     }
 
 }
@@ -39,7 +32,7 @@ function locationFound(position){
   });
   console.log('map initialized');
   console.log('location found');
-  cityCircle = new google.maps.Marker({
+  clientMarker = new google.maps.Marker({
             position: center,
             icon: {
               url: "sprites/dick.gif",
@@ -51,15 +44,27 @@ function locationFound(position){
   loopUpdate = window.setInterval(updateLocation, 1000);
 }
 
-
 function failure(){
   console.log('Geolocation error');
-  document.getElementById("map").innerHTML="Location services are not enabled"
+  document.getElementById("map").innerHTML="Location services are not enabled";
 }
 
-function success(position)	{
+
+
+
+function updateLocation() {
+  navigator.geolocation.getCurrentPosition(updateSuccess, updateFailure);
+}
+
+function updateSuccess(position)	{
   console.log('location updated');
   loc = position.coords;
   center = {lat: loc.latitude, lng: loc.longitude};
-  cityCircle.setPosition(center);
+  if (clientMarker.getMap() == null) clientMarker.setMap(map);
+  clientMarker.setPosition(center);
+}
+
+function updateFailure()  {
+  console.log('location not updated, permissions revoked');
+  clientMarker.setMap(null);
 }
