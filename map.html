@@ -4,13 +4,17 @@
     <meta charset="utf-8">
     <title>Map</title>
     <meta name="viewport" content="width = device-width, initial-scale = 1.0">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <style>
       html, body {
         height: 100%;
         margin: 0;
-        padding: 0;
+        padding-top: 50px;
       }
       #map {
         height: 100%;
@@ -48,8 +52,6 @@
           zoom: 13
         });
         console.log('map initialized');
-        var transitLayer = new google.maps.TransitLayer();
-        transitLayer.setMap(map);
         updateLocation();
         window.setTimeout(function(){map.panTo(new google.maps.LatLng(getLatitude(),getLongitude())),{map: map,title: 'You Are Here'};},1000);
         var myVar = window.setInterval(updateLocation, 1000);
@@ -58,7 +60,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4C9uC6Hv19Lf4bYhmURb6llwWV57pvMU&callback=initMap"
     async defer></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/bootstrap.js"></script>
 
 
 </body>
