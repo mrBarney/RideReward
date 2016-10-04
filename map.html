@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4C9uC6Hv19Lf4bYhmURb6llwWV57pvMU&callback=initMap"
+    async defer></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <style>
       html, body {
         height: 100%;
@@ -24,44 +26,26 @@
 
 <body>
   <script src = "js/google_scripts.js"></script>
-    <div class="bar">
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <a class="navbar-brand">Bus Ride With Jesus</a>
-                <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-                <div class="collapse navbar-collapse navHeaderCollapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="map.html">Map</a></li>
-                        <li><a href="save_money.html">Save Money</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="map"></div>
-    <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 0, lng: 0},
-          zoom: 13
-        });
-        console.log('map initialized');
-        updateLocation();
-        window.setTimeout(function(){map.panTo(new google.maps.LatLng(getLatitude(),getLongitude())),{map: map,title: 'You Are Here'};},1000);
-        var myVar = window.setInterval(updateLocation, 1000);
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4C9uC6Hv19Lf4bYhmURb6llwWV57pvMU&callback=initMap"
-    async defer></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
-
+  <div class="bar">
+      <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+              <a class="navbar-brand">Bus Ride With Jesus</a>
+              <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+              <div class="collapse navbar-collapse navHeaderCollapse">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="map.html">Map</a></li>
+                      <li><a href="save_money.html">Save Money</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div id="map"></div>
 </body>
 
 </html>
