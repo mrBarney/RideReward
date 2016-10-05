@@ -10,6 +10,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="js/scripts.js"></script>
 		<script src="js/sponsor.js"></script>
+    <script src="js/qrcode.js"></script>
+    <script src="js/jquery.qrcode.js"></script>
 </head>
 
 <body>
@@ -48,8 +50,10 @@
           <option>Store 4</option>
         </select>
         </div>
-        <input type="button" href="#" id="startClock" value = "Click here for your coupon code">
+        <input onClick = sendLocation() type="button" href="#" id="startClock" value = "Click here for your coupon code">
         <span id="count"></span>
+        <div class="content"></div>
+        <div id = "qrcode"></div>
     </div>
 
 </body>

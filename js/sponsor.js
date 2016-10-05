@@ -5,11 +5,10 @@ $(document).ready(function(){
   	let lbl = $("#startClock").attr("value");
     let id;
     id = setInterval(()=> {
-  		$("#startClock").attr("value",lbl+"... "+counter);
+  		$("#startClock").attr("value","Your coupon will be ready in"+"... "+counter);
       counter--;
       if (counter === 0) {
-          alert('You will now be redirected');
-          window.location.href = "http://www.google.com";
+          resendLocation();
           clearInterval(id);
       }
     }, 1000);
