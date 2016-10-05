@@ -24,7 +24,16 @@ app.get("/", function (req, res) {
 app.post("/", function(req, res){
 	if(database(req)){
 		console.log("Sending code");
-		res.send({code: "12321332"});
+		res.send({code: "Jordan is a big NOOB"});
+		return;
+	}
+	console.log(req.body);
+	res.sendStatus(200);
+});
+app.post("/map", function(req, res){
+	if(database(req)){
+		console.log("Sending bus locations");
+		res.send({bus: [{lat: 50, lng: 50},{lat: -50, lng: -50}]});
 		return;
 	}
 	console.log(req.body);
