@@ -71,8 +71,8 @@ function locationFound(position){
   clientMarker = new google.maps.Marker({
             position: center,
             icon: {
-              url: "sprites/dick.gif",
-              anchor: {x: 41, y: 32}
+              url: "sprites/green_marker.gif",
+              anchor: {x: 16, y: 16}
             },
             map: map
           });
